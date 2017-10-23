@@ -998,6 +998,9 @@ typedef struct {
   UINT8                   pad7[2];
   UINT8                   CustomBoot;
   EG_IMAGE                *CustomLogo;
+
+  //SpoofOSXVersion
+  CHAR16                  *SpoofOSXVersion;
   
   UINT32                  RefCLK;
   

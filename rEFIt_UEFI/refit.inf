@@ -123,6 +123,7 @@
   Platform/PlatformDriverOverride.c
 	Platform/Hibernate.c
   Platform/Net.c
+  Platform/apple.c
 
 [Packages]
 	Clover/CloverPkg.dec

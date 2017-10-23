@@ -2027,6 +2027,13 @@ GetEarlyUserSettings (
       }
 
       DBG ("Custom boot %s (0x%X)\n", CustomBootModeToStr (gSettings.CustomBoot), gSettings.CustomLogo);
+
+      // Spoof OSX Version
+      Prop = GetProperty (DictPointer, "SpoofOSXVersion");
+      if (Prop != NULL) {
+        gSettings.SpoofOSXVersion = AllocateZeroPool (AsciiStrSize (Prop->string) * sizeof(CHAR16));
+        AsciiStrToUnicodeStr (Prop->string, gSettings.SpoofOSXVersion);
+      }
     }
 
     //*** SYSTEM ***
