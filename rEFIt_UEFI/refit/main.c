@@ -35,9 +35,9 @@
  */
 
 #include "entry_scan.h"
+#include "apple.h"
 //#include "Platform.h"
 //#include "../include/Handle.h"
-
 #include "Version.h"
 
 #ifndef DEBUG_ALL
@@ -1979,6 +1979,11 @@ RefitMain (IN EFI_HANDLE           ImageHandle,
         DBG("Error in Early settings%d: %r\n", i, Status);
       }
     }
+  }
+
+  // spoof OSX version if needed
+  if (gSettings.SpoofOSXVersion && gSettings.SpoofOSXVersion[0] != L'\0') {
+    SetAppleOSInfo();
   }
 
 #ifdef ENABLE_SECURE_BOOT
